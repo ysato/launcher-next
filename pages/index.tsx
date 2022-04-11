@@ -16,7 +16,11 @@ export async function getStaticProps() {
   };
 }
 
-const Home: NextPage = ({ allPostsData }) => {
+export default function Home({
+  allPostsData,
+}: {
+  allPostsData: { id: string; date: string; title: string }[];
+}) {
   return (
     <Layout home>
       <Head>
@@ -49,6 +53,4 @@ const Home: NextPage = ({ allPostsData }) => {
       </section>
     </Layout>
   );
-};
-
-export default Home;
+}
